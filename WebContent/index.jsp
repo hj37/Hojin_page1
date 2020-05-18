@@ -40,7 +40,18 @@
 								<li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<%
+									if("".equals(session.getAttribute("id")) || session.getAttribute("id") == null){
+							
+								%>
 								<li><a href="login.jsp">Login</a></li>
+								<%
+									}else{
+										%>
+								<li><a href="logout.jsp">Logout</a></li>
+										<% 
+									}
+								%>
 								<li><a href="mypage.jsp">Mypage</a></li>
 								
 							</ul>

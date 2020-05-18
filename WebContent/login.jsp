@@ -47,8 +47,18 @@
 								<li><a href="left-sidebar.html">Left Sidebar</a></li>
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<%
+									if("".equals(session.getAttribute("id")) || session.getAttribute("id") == null){
+							
+								%>
 								<li><a href="login.jsp">Login</a></li>
-								<li><a href="mypage.jsp">Mypage</a></li>
+								<%
+									}else{
+										%>
+								<li><a href="logout.jsp">Logout</a></li>
+										<% 
+									}
+								%>								<li><a href="mypage.jsp">Mypage</a></li>
 								
 							</ul>
 						</nav>
@@ -67,15 +77,15 @@
 						<h2>Mauris vulputate dolor</h2>
 						<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
 					</header>
-					<form method="post" action="#">
+					<form method="post" id="join" action="loginpro.jsp">
 						<div class="row half">
 							<div class="12u">
-								<input class="text" type="text" name="id" id="id" placeholder="ID" />
+								<input  type="text" name="id" placeholder="ID" />
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
-								<input class="text" type="password" name="pwd" id="pwd" placeholder="Password" />
+								<input  type="password" name="passwd"  placeholder="Password" />
 							</div>
 						</div>
 					
